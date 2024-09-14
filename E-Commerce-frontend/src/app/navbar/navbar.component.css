@@ -1,0 +1,87 @@
+/* Styling for the logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+  color: white; /* Ensure logo text color contrasts well with toolbar */
+}
+
+/* Adds space between the logo and right-aligned elements */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Styles for search bar container */
+mat-toolbar > div {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+/* Styles for search input and button */
+input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  width: 200px; /* Adjust width as needed */
+}
+
+button {
+  background-color: white; /* Matching button background with the input field */
+  border: none;
+  border-radius: 4px;
+  padding: 3px 6px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: primary; /* Or any color that matches your design */
+}
+
+/* Ensure button text is readable */
+button:hover {
+  background-color: #e0e0e0; /* Add a light background on hover */
+}
+
+/* Styles for navbar buttons */
+mat-toolbar a {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  margin-left: 15px;
+}
+
+/* Styles for mat-icon */
+mat-icon {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Divider styling */
+.divider {
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 10px 0;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Styling for footer links */
+.footer-container a {
+  color: white;
+  margin: 0 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}

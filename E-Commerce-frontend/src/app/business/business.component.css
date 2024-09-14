@@ -1,0 +1,85 @@
+/* General container styling */
+.signup-container {
+    max-width: 400px;
+    margin: 60px auto; /* Reduced margin for vertical spacing */
+    padding: 30px; /* Reduced padding */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    font-size: 26px; /* Slightly reduced font size */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px; /* Reduced margin */
+    letter-spacing: 1px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Reduced gap between form elements */
+}
+
+/* Form field styling */
+.mat-form-field {
+    width: 100%;
+    position: relative;
+}
+
+input[matInput] {
+    width: 100%;
+    padding: 10px; /* Reduced padding for form fields */
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[matInput]:focus {
+    border-color: #1976d2;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(202, 173, 5, 0.3);
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 12px; /* Reduced button padding */
+    background-color: #1976d2;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1565c0;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #0d47a1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 25px; /* Adjusted for mobile */
+    }
+}
