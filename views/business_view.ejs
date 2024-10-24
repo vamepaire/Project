@@ -1,0 +1,80 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/javascripts/script.js"></script>
+</head>
+
+
+<% if (success) { %>  
+<div id="successMessage" style="color: green;" class="text-center font-bold text-2xl"><%= message %></div>
+<% } else if (message) { %>
+<div style="color: red;"><%= message %></div>
+<% } %>
+
+
+<body class="bg-gray-100">
+  <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-white text-xl font-bold"><%= user%>'s Dashboard</h1>
+      <ul class="flex space-x-4">
+        <li><a href="/add-product" class="text-white hover:underline" style="font-size: large; "><strong>Add Product</strong></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mx-auto mt-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Product List</h2>
+    <% if (products.length > 0) { %>
+    <table class="w-full bg-white shadow-md rounded-lg">
+      <thead>
+        <tr class="bg-gray-300 text-center">
+          <th class="p-2">Id.</th>
+          <th class="p-4">Business Name</th>
+          <th class="p-4">Product Name</th>
+          <th class="p-4">Price</th>
+          <th class="p-4">Description</th>
+          <th class="p-4">Rating</th>
+          <th class="p-4">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.forEach(function(product) { %>
+        <tr class="border-t ">
+          <td class="p-2"><%= ++index %></td>
+          <td class="p-4"><%= product.business_name %></td>
+          <td class="p-4"><%= product.name %></td>
+          <td class="p-4"><%= product.price %></td>
+          <td class="p-4"><%= product.description %></td>
+          <td class="p-4"><%= product.rating %></td>
+         <td>
+           <div class="flex justify-center overflow-hidden rounded-md">
+             <img class="p-2 max-w-xs object-cover" src="<%= product.image %>" alt="Image Unavailable">
+           </div>
+         </td>
+
+          
+          <td class="p-4">
+            <a href="/edit-product/<%= product._id %>" class="text-blue-500 hover:underline font-semibold text-lg"><strong>Update</strong></a><br>
+            <br><a href="/delete-product/<%= product._id %>" class="text-red-500 hover:underline font-semibold text-lg"><strong>Delete</strong></a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h3 class="text-center text-gray-600 mt-6">No products available. Please add a product.</h3>
+    <% } %>
+  </div>
+
+  <!-- Add Product Button (Optional for Mobile View) -->
+  <!-- <div class="fixed bottom-6 right-6">
+    <a href="/add-product" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-500 transition">
+      Add Product
+    </a>
+  </div> -->
+
+</body>
+
+</html>
