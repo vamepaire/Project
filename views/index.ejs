@@ -55,34 +55,34 @@
       </div>
     </div>
 
-   <div class="py-16">
-     <div class="container mx-auto px-4">
-       <h2 class="text-3xl font-bold text-center mb-12">Featured Products</h2>
-       <% if (productData.length > 0) { %>
-       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-         <% productData.forEach(function(product) { %>
-         <div class="bg-white rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-lg border border-solid border-gray-300">
-           <a href="/read/<%= product._id %>">
-             <img src="<%= product.image %>" alt="<%= product.name %>" class="w-full h-48 object-contain">
-           </a>
-          
-           <div class="p-4">
-             <a href="/read/<%= product._id %>" class="block">
-               <h3 class="font-bold text-lg text-gray-800 hover:text-blue-500 transition-colors duration-300"><%= product.name %></h3>
-             </a>
-             <p class="text-gray-600">&#8377;<%= product.price.toFixed(2) %></p>
-             <a class="text-blue-600" href="/read/<%= product._id %>">See More</a>
-             <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 w-full">Add to Cart</button>
-           </div>
-         </div>
-         <% }); %>
-         <!-- Closing forEach loop -->
-       </div>
-       <% } else { %>
-       <p class="text-center text-gray-600">No products available at this time.</p>
-       <% } %>
-     </div>
-   </div>
+    <div class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Products</h2>
+        <% if (productData.length > 0) { %>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <% productData.forEach(function(product) { %>
+          <div class="bg-white rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-lg" style="height: 310px;">
+            <a href="/read/<%= product._id %>">
+              <img src="<%= product.image %>" alt="<%= product.name %>" class="w-full h-48 object-contain">
+            </a>
+
+            <div class="p-4">
+              <a href="/read/<%= product._id %>" class="block">
+                <h3 class="font-bold text-lg text-gray-800 hover:text-blue-500 transition-colors duration-300" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-clamp: 2;">
+                  <%= product.name %>
+                </h3>
+
+                <p class="text-gray-600">&#8377;<%= product.price.toFixed(2) %></p>
+                <a class="text-blue-600" href="/read/<%= product._id %>">See More</a>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+        <% } else { %>
+        <p class="text-center text-gray-600">No products available at this time.</p>
+        <% } %>
+      </div>
+    </div>
 
 
 

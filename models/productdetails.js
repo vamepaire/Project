@@ -23,7 +23,7 @@ const product_details = mongoose.Schema({
   description: {
     type: String,
     trim: true,
-    maxlength: 200,
+    maxlength: 500,
   },
   rating: {
     type: Number,
